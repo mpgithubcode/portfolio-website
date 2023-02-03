@@ -1,0 +1,70 @@
+:root {
+--position: -30px;
+}
+
+* {
+border: 1px solid black;
+}
+
+.card-container {
+position: relative;
+width: 250px;
+height: 200px;
+}
+
+@media (min-width: 550px) {
+  .card-container {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+.card {
+position: absolute;
+width: 90%; 
+height: 90%;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+transform: translate(0%, calc(var(--position) * var(--i))) rotate(0deg) skew(-5deg, -10deg);
+
+}
+
+/* adjust the position of each card */
+.card-1 {
+animation: wave ease-in 10s infinite;
+  background-size: contain;
+  object-fit: cover;
+background-image: url('../assets/images/1.jpg')
+}
+
+.card-2 {
+animation: wave ease-in 10s infinite;
+z-index: 1;
+animation-delay: 2s;
+  background-size: contain;
+  object-fit: cover;
+background-image: url('../assets/images/2.jpg')
+}
+
+.card-3 {
+animation: wave ease-in 10s infinite;
+z-index: 2;
+animation-delay: 4s;
+  background-size: cover;
+  object-fit: cover;
+background-image: url('../assets/images/3.jpg')
+
+}
+
+
+@keyframes wave {
+0% {
+  transform: translateY(0%) translate(0%, calc(var(--position) * var(--i))) rotate(0deg) skew(-5deg, -10deg);
+}
+50% {
+  transform: translateY(10%) translate(0%, calc(var(--position) * var(--i))) rotate(0deg) skew(-5deg, -10deg);
+}
+100% {
+  transform:translate(0%, calc(var(--position) * var(--i))) rotate(0deg) skew(-5deg, -10deg);
+}
+}
